@@ -1,12 +1,14 @@
-import React from 'react';
-import { Text } from 'react-native';
+import React from 'react'
 
-import { Container } from './styles';
+import {
+  Container,
+  HeadingText
+} from './styles'
 
-const Heading: React.FC = () => {
+const Heading: React.FC = ({ children }) => {
   return (
     <Container>
-      <Text>Heading</Text>
+      <HeadingText>{children}</HeadingText>
     </Container>
   );
 };

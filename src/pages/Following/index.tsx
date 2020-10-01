@@ -1,6 +1,8 @@
 import React, { useMemo } from 'react'
+import { FlatList, View } from 'react-native'
+
 import Header from '../../components/Header'
-import { View } from 'react-native'
+import Heading from '../../components/Heading'
 
 import {
   Wrapper,
@@ -15,11 +17,11 @@ interface Item {
 }
 
 const Following: React.FC = () => {
-  useMemo(() => {
+  const { data, indexes } = useMemo(() => {
     const items: Item[] = [
       {
         key: 'PAGE_HEADING',
-        render: () => <View />
+        render: () => <Heading>Following</Heading>
       },
       {
         key: 'FOLLOWED_CATEGORIES',
@@ -61,7 +63,16 @@ const Following: React.FC = () => {
     <Wrapper>
       <Container>
         <Header />
-        <Main />
+        <Main>
+          <FlatList<Item>
+            data={data}
+            renderItem={({ item }) => item.render()}
+            keyExtractor={item => item.key}
+            stickyHeaderIndices={indexes}
+            onRefresh={() => {}}
+            refreshing={false}
+          />
+        </Main>
       </Container>
     </Wrapper>
   )
