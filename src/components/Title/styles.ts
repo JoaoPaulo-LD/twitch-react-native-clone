@@ -7,4 +7,5 @@ export const Container = styled.Text`
   font-family: roboto_700;
   font-size: 14px;
   text-transform: uppercase;
+  padding: 5px 0;
 `
