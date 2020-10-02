@@ -3,6 +3,8 @@ import { FlatList, View } from 'react-native'
 
 import Header from '../../components/Header'
 import Heading from '../../components/Heading'
+import Title from '../../components/Title'
+import CategoryList from '../../components/CategoryList'
 
 import {
   Wrapper,
@@ -25,25 +27,25 @@ const Following: React.FC = () => {
       },
       {
         key: 'FOLLOWED_CATEGORIES',
-        render: () => <View />,
+        render: () => <Title>Followed Categories</Title>,
         isTitle: true,
       },
-      { key: 'C1', render: () => <View />, },
+      { key: 'C1', render: () => <CategoryList />, },
       {
         key: 'LIVE_CHANNELS',
-        render: () => <View />,
+        render: () => <Title>Live Channels</Title>,
         isTitle: true,
       },
       { key: 'C2', render: () => <View />, },
       {
         key: 'CONTINUE_WATCHING',
-        render: () => <View />,
+        render: () => <Title>Continue Watching</Title>,
         isTitle: true,
       },
       { key: 'C3', render: () => <View />, },
       {
         key: 'OFFLINE_CHANNELS',
-        render: () => <View />,
+        render: () => <Title>Offline Channels</Title>,
         isTitle: true,
       },
       { key: 'C4', render: () => <View />, },
